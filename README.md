@@ -1,5 +1,5 @@
 Arcade Expression #1
-Finds locations from parks layer that are 1/2 miles
+Intersect. Finds locations from parks layer that are 1/2 miles
 
 
 var intersectLayer = Intersects(FeatureSetByName($map, "Recreation_Parks"),Buffer($feature, .5, 'mile'))
@@ -22,6 +22,7 @@ for (var t in intersectLayer2){
 }
 
 return "There is " + pcount + " Parks with a 1/2 miles of location" + TextFormatting.Newline + parks + TextFormatting.Newline + trails
+
 
 Arcade #2
 Adjusting labels with AGOL pop up
@@ -91,4 +92,20 @@ else if ($feature["Trans_Routes"] == 1){
     results += "Transit Route = Yes (Within 1/2 mile)" + TextFormatting.NewLine}
     
 return results
+
+Arcade #3
+Arcade label adjustment
+var Submitted = $feature["Department"];
+
+var Deparment = IIF(Submitted != Null, 1,'')
+
+if (Submitted == "PC"){
+    return "YCPC"
+}
+if (Submitted == "RD"){
+    return "Recorder of Deeds"
+}
+if (Submitted == "TA"){
+    return "Tax Assessment"
+}
 
