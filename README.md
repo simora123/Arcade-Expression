@@ -95,6 +95,7 @@ return results
 
 Arcade #3
 Arcade label adjustment
+
 var Submitted = $feature["Department"];
 
 var Deparment = IIF(Submitted != Null, 1,'')
