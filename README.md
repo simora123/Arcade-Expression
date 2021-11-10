@@ -1,11 +1,11 @@
-Arcade Expression #1
-Intersect. Finds locations from parks layer that are 1/2 miles
+Arcade Expression #1<br />
+Intersect. Finds locations from parks layer that are 1/2 miles<br />
 
 
-var intersectLayer = Intersects(FeatureSetByName($map, "Recreation_Parks"),Buffer($feature, .5, 'mile'))
-var intersectLayer2 = Intersects(FeatureSetByName($map, "Trails"),Buffer($feature, .5, 'mile'))
-var parks = ""
-var pcount = 0
+var intersectLayer = Intersects(FeatureSetByName($map, "Recreation_Parks"),Buffer($feature, .5, 'mile'))<br />
+var intersectLayer2 = Intersects(FeatureSetByName($map, "Trails"),Buffer($feature, .5, 'mile'))<br />
+var parks = ""<br />
+var pcount = 0<br />
 for (var f in intersectLayer){
     parks += f.PARK_NAME + TextFormatting.NewLine
     pcount += 1
